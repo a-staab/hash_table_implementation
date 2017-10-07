@@ -9,15 +9,10 @@ class HashTable(object):
         return hash(key) % self.length
 
     def search(self, key):
-        if self.table[self.hash_func(key)][0] == key:
-            return True
-        elif not self.table[self.hash_func(key)][0]:
-            return False
-        else:
-            for item in self.table[self.hash_func(key)]:
-                if item == key:
-                    return True
-            return False
+        for item in self.table[self.hash_func(key)]:
+            if item == key:
+                return True
+        return False
 
     def insert(self, key):
         if self.search(key) is True:
