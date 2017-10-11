@@ -25,11 +25,8 @@ class HashTable(object):
                 self.table[self.hash_func(key)].append(key)
 
     def delete(self, key):
-        if self.table[self.hash_func(key)][0] == key:
-            self.table[self.hash_func(key)][0] = None
-        else:
-            if self.search(key) is True:
-                self.table[self.hash_func(key)].remove(key)
+        if self.search(key) is True:
+            self.table[self.hash_func(key)].remove(key)
 
     # Helper print functions
 
